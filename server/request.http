@@ -1,0 +1,141 @@
+
+### POST Register
+POST  http://localhost:4040/api/auth/register
+Content-Type: application/json
+
+{
+    "username":"TrungDev",
+    "email":"vantrungarsenal@gmail.com",
+    "password":"admin123",
+    "avata":"trung.jpg"
+}
+
+
+### POST Login
+POST  http://localhost:4444/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"vantrungarsenal@gmail.com",
+    "password":"vivantrung"
+}
+
+### POST Create posts
+POST http://localhost:4444/api/admin/createBaiDang
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDgxODM3ZGE4MGI3MDM3ODQ5YzU0ZTkiLCJpYXQiOjE2MTkxMDg3NzV9.RwHa8-lr0pTN1Gt4nx9yp-AsSXYpRN9BuCIn-qGMQaA
+
+
+{
+    "title":"The Photography Technique",
+    "description":"A small river named Duden flows by their place and supplies it with the necessary regelialia.",
+    "image":"123.jpg",
+    "speciesId":"6081a3639a76c421bcce6ed1"
+   
+}
+
+### GET POSTS
+GET http://localhost:4040/api/posts
+
+
+### UPDATE POSTS
+PUT http://localhost:4444/api/admin/60747d915dd94a3fe40f3ce5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDc0N2Q2ODVkZDk0YTNmZTQwZjNjZTQiLCJpYXQiOjE2MTgyNDcwMjl9.Jk5-vmCFL9wlORjbLZpoASKnf79RbaN66xwqBSkNj4o
+
+{
+    "title":"java1111112",
+    "description":"java111",
+    "url":"java.org.com",
+    "image":"java.jpg",
+    "speciesId": "60702a33a30b0f265c92b4f2"
+    
+    
+}
+
+
+### DELETE POSTS
+PATCH   http://localhost:4040/api/admin/607502fd0b52743a241e9774
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDc1MDJlMjBiNTI3NDNhMjQxZTk3NzMiLCJpYXQiOjE2MTgyODExOTh9.hPeLf4srX-h_esx4NEVP_Qe-EJFxSN3fwZ91Lngo3U8
+
+
+### POST SPECIESPOST
+POST http://localhost:4444/api/admin/postspecies
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDgxODM3ZGE4MGI3MDM3ODQ5YzU0ZTkiLCJpYXQiOjE2MTkxMDg1NDV9.gBs0HctQupRVIlKfl9k7X-MsJ6vYlTHM8WO7WHDQXog
+
+{
+    "species":" Story",
+    "description":""
+}
+
+### PATCH Comment 
+PATCH http://localhost:4040/api/posts/60727a7f3c674c1ae86169df
+Content-Type: : application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDZmMmRhZWU2YWE2OTA3MDQyYWJlNWIiLCJpYXQiOjE2MTgxMTQ5MzR9.KFB8Pv5k_kNbjlG9be3j0Mk-K8Y7zYTExG8rnYS7lmo
+
+{
+    "comments":[
+        {
+            "content":"hello ban trung",
+            "IdUserComment":"606f2daee6aa6907042abe5b"
+        }
+    ]
+}
+
+
+### GET DATA BY USER 
+GET http://localhost:4040/api/posts/posts-by-user/607502e20b52743a241e9773
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDc1MDJlMjBiNTI3NDNhMjQxZTk3NzMiLCJpYXQiOjE2MTgyODExOTh9.hPeLf4srX-h_esx4NEVP_Qe-EJFxSN3fwZ91Lngo3U8
+
+
+### @ PATCH LOCK ACOUNT
+PATCH http://localhost:4040/api/admin/lock-acount/6073f0e6e9eaef2960bc5b04
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDczMWJmMjJiODVjNDJmNWM5NzdiMmIiLCJpYXQiOjE2MTgyMTEwNjl9.FXRRouqmRaDLEpgHtNCmTmTNP0Z_0RwhyVwUydgKlzs
+
+
+### @ PATCH OPEN LOCK ACOUNT
+PATCH http://localhost:4040/api/admin/open-acount/6073f0e6e9eaef2960bc5b04
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDczMWJmMjJiODVjNDJmNWM5NzdiMmIiLCJpYXQiOjE2MTgyMTEwNjl9.FXRRouqmRaDLEpgHtNCmTmTNP0Z_0RwhyVwUydgKlzs
+
+### @ PATCH EXECUTED POSTS
+PATCH http://localhost:4040/api/admin/executed-post/60746552c383ae43c4e96d12
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDczMWJmMjJiODVjNDJmNWM5NzdiMmIiLCJpYXQiOjE2MTgyNDQwMjR9.tFGmYpVFmALiiEmiV6hUhaIMfnKiNGWwHv4Q_-a5gxM
+
+### @ PATCH BLOCK POSTS
+PATCH  http://localhost:4040/api/admin/block-post/60746552c383ae43c4e96d12
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDczMWJmMjJiODVjNDJmNWM5NzdiMmIiLCJpYXQiOjE2MTgyNDQwMjR9.tFGmYpVFmALiiEmiV6hUhaIMfnKiNGWwHv4Q_-a5gxM
+
+### @ DESTROY POST {role: 'admin'}
+DELETE http://localhost:4040/api/admin/destroy-post/60741769e680712df0e107e1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDc0MTdhZGU2ODA3MTJkZjBlMTA3ZTIiLCJpYXQiOjE2MTgyNDQ3MzF9.1rSNhiYXbYd5K9xWkyz763-eR-gNcqSETIC4gc8nl7E
+
+### GET DATA POST BY SPECIES
+GET http://localhost:4040/api/posts/species/607070276b0c8702ac8bbfdf
+
+### PATCH UPDATE PASSWORD USER
+PUT  http://localhost:4444/api/account/update-password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDgxODM3ZGE4MGI3MDM3ODQ5YzU0ZTkiLCJpYXQiOjE2MTkxMDcwNzZ9.fImD8AF7s4Aaf-ByzaqzB1OX5WVw1AH_8ErFgrhf8ts
+
+{
+    "oldPassword":"khongcomatkhaU123",
+    "newPassword":"vivantrung"
+}
+
+### PUT UPDATE ACOUNT 
+PUT http://localhost:4444/api/account/update-account
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDgxODM3ZGE4MGI3MDM3ODQ5YzU0ZTkiLCJpYXQiOjE2MTkxMDcwNzZ9.fImD8AF7s4Aaf-ByzaqzB1OX5WVw1AH_8ErFgrhf8ts
+
+{
+    "username":"trungdev",
+    "descreption":"I am A Photographer from America Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.",
+    "avata":"trung.jpg"
+}
+
+### Confirm Account by Admin
+PUT  http://localhost:4040/api/admin/confirm-role/607effe668a50625043b07e2
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDczMWJmMjJiODVjNDJmNWM5NzdiMmIiLCJpYXQiOjE2MTg5Mzc1NzR9.AsdYJLP7bKPjMD0MACKPwVh4Wmlv377jJWxPLogwCgk
