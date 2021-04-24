@@ -89,13 +89,13 @@ class accountController {
     async loginPage(req, res, next) {
         const { email, password } = req.body
         if (!email) {
-            return res.status(400).json({
+            return res.status(401).json({
                 success: false,
                 message: "Vui lòng nhập Email."
             })
         }
         if (!password) {
-            return res.status(400).json({
+            return res.status(401).json({
                 success: false,
                 message: "Vui lòng nhập Mật khẩu."
             })
@@ -103,7 +103,7 @@ class accountController {
         try {
             const user = await Account.findOne({ email })    //check account users
             if (!user) {
-                return res.status(400).json({
+                return res.status(401).json({
                     success: false,
                     data: null,
                     message: 'Email hoặc Mật khẩu sai.'
@@ -111,7 +111,7 @@ class accountController {
             }
             const passwordValidate = await hashPasswordByArgon2.verify(user.password, password)
             if (!passwordValidate) {
-                return res.status(400).json({
+                return res.status(401).json({
                     success: false,
                     message: 'Email hoặc Mật khẩu sai.'
                 })

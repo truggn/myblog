@@ -1,6 +1,6 @@
-import Button from 'react-bootstrap/Button'
+
 import Form from 'react-bootstrap/Form'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import { AuthContext } from '../../../contexts/AuthContext'
 import AlertMessage from '../alertMessage'
@@ -9,9 +9,6 @@ const Login = () => {
 
     // context 
     const { loginUser } = useContext(AuthContext)
-
-    // Route 
-    const hisory = useHistory()
 
     // local state
     const [loginForm, setLoginForm] = useState({
@@ -34,7 +31,7 @@ const Login = () => {
         try {
             const loginData = await loginUser(loginForm)
             if (loginData.success) {
-                // hisory.push('/home')
+
             } else {
                 setAlert({ type: 'danger', message: loginData.message })
                 setTimeout(() => setAlert(null), 3000)

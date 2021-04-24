@@ -1,10 +1,8 @@
 import Login from '../component/layout/auth/login'
 import Register from '../component/layout/auth/register'
-import pageBackend from './backEnd'
 import { AuthContext } from '../contexts/AuthContext'
 import { useContext } from 'react'
 import { Redirect } from 'react-router-dom'
-import Spinner from 'react-bootstrap/Spinner'
 
 const Auth = ({ authRoute }) => {
 
@@ -13,12 +11,11 @@ const Auth = ({ authRoute }) => {
     let body
 
     if (authLoading)
-        return <Redirect to='/home' />, <Redirect to='/back-end' />, <Redirect to='/font-end' />
-    else if (isAuthenticated) return <Redirect to='/manage-acount' />, <Redirect to='/home' />, <Redirect to='/back-end' />, <Redirect to='/font-end' />
+        return <Redirect to='/home' />
+    else if (isAuthenticated) return <Redirect to='/manage-acount' />
     else
         body = (
             <>
-                {authRoute === '/back-end' && <pageBackend />}
                 { authRoute === '/login' && <Login />}
                 { authRoute === '/register' && <Register />}
             </>

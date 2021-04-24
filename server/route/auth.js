@@ -48,7 +48,7 @@ route.post('/login', accountController.loginPage)
 route.get('/', auth, async (req, res) => {
     try {
         const user = await Account.findById(req.userId).select('-password')
-        if (!user) return res.status(400).json({ success: false, message: 'User not found' })
+        if (!user) return res.status(401).json({ success: false, message: 'User not found' })
         res.status(200).json({ success: true, user })
     } catch (error) {
         console.log(error)
